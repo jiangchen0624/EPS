@@ -1,9 +1,15 @@
 services:
-  app:
-    image: node:20
+  dev:
+    image: node:20-alpine
     working_dir: /app
     ports:
       - "5173:5173"
     volumes:
       - .:/app
-    command: npm run dev -- --host 0.0.0.0
+      - /app/node_modules
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+
+  prod:
+    build: .
+    ports:
+      - "80:80"

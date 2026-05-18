@@ -72,7 +72,7 @@ const router = useRouter()
 const userStore = useUserStore()
 const detectStats = ref({ total:0, good:0, over:0 })
 const coverStats = ref({ coveredProvinces:0, totalProvinces:34, provinceRate:0, coveredCities:0, totalCities:106, cityRate:0, provinceList:[], cityList:[] })
-const provChart = ref<HTMLElement>(); const distChart = ref<HTMLElement>(); const trendChart = ref<HTMLElement>(); const detectPieChart = ref<HTMLElement>()
+const distChart = ref<HTMLElement>(); const trendChart = ref<HTMLElement>(); const detectPieChart = ref<HTMLElement>()
 const cColor = (r:number) => r<30?'#f44336':r<60?'#ff9800':r<80?'#2196f3':'#4caf50'
 const allProvinces = ['北京','天津','上海','重庆','河北','山西','内蒙古','辽宁','吉林','黑龙江','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','广西','海南','四川','贵州','云南','西藏','陕西','甘肃','青海','宁夏','新疆','香港','澳门','台湾']
 const provinceGrid = computed(() => {
