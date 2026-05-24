@@ -345,10 +345,13 @@ const checks = ref({
 
 // 视觉选几级 → PM2.5 自动跳几级
 watch(() => checks.value.visualLevel, (v) => { pm25Level.value = v })
+watch(pm25Level, (v) => { checks.value.visualLevel = v })
 // 嗅觉选几级 → SO₂ 自动跳几级
 watch(() => checks.value.smellLevel, (v) => { so2Level.value = v })
+watch(so2Level, (v) => { checks.value.smellLevel = v })
 // 体感选几级 → CO 自动跳几级
 watch(() => checks.value.bodyLevel, (v) => { coLevel.value = v })
+watch(coLevel, (v) => { checks.value.bodyLevel = v })
 
 const overallLevel = computed(() =>
   Math.max(pm25Level.value, so2Level.value, coLevel.value)
